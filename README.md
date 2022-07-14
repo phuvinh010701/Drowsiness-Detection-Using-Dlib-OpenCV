@@ -40,4 +40,4 @@ python3 drowsiness_detection.py
 * source: [Real-Time Eye Blink Detection using Facial Landmarks](http://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf)
 
 ### Demo
-<img src='images/example.gif' style='width:20%;display: block; margin-left: auto;margin-right: auto; '>
+<img src='images/example.gif' style='width:50%;display: block; margin-left: auto;margin-right: auto; '>
