@@ -3,7 +3,11 @@ from imutils import face_utils
 import dlib
 import cv2
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('input/input1.mp4')
+
+frame_width = int(cap.get(3))
+frame_height = int(cap.get(4))
+out = cv2.VideoWriter('output_car2.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 30, (frame_width,frame_height))
 
 ear_thresh = 0.15
 count_ear = 0
@@ -58,9 +62,10 @@ while True:
 
   cv2.putText(frame, "EAR: {:.2f}".format(ave_ear), (300, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
   cv2.imshow('sleep detection', frame)
-  
+  out.write(frame)
   if cv2.waitKey(1) & 0xFF == ord('q'):
       break
 
 cap.release()
+out.release()
 cv2.destroyAllWindows()
